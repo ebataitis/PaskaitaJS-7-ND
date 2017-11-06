@@ -1,0 +1,14 @@
+body{
+    text-align: center;
+    font-family: 'Open Sans', monospace;
+}
+.clearfix::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+.container{
+    max-width: 900px;
+    width: 90%;
+    margin: auto;
+}
