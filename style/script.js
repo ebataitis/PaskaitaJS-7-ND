@@ -86,6 +86,7 @@ const evenNums = numbers.filter(item => item % 2 == 0);
 
 /// reduce - grazina tik viena verte is viso masyvo
 
+
 var suma = numbers.reduce((total, item) => {
     return total += item;
 }, 0);
@@ -135,7 +136,7 @@ persons[0].adult = true;
 const birthDay = persons.map(person => 2017 - person.age);
 console.log(birthDay);
 
-
+console.warn('NAMU DARBAS');
 const prekes = [{
     name: 'pienas',
     price: 1.5,
@@ -194,7 +195,7 @@ const prekes = [{
     type: 'riebalai'
 }];
 //kainu suma
-var priceSum = prekes.reduce((allsum, preke)=>allsum+=preke.price,0);
+var priceSum = prekes.reduce((allSum, preke)=>allSum+=preke.price,0);
 console.log('Prekiu kainu suma ',priceSum, 'EUR.');
 //pasibaiges galiojimas
 var endExpire = prekes.filter(preke=>preke.expire-1106<0);
@@ -202,6 +203,7 @@ endExpire.forEach(preke=>console.log('Baige galioti ',preke.name));
 //vidutine kaina
 var avgPrice = priceSum/prekes.length;
 console.log('vidutine kaina ', avgPrice,'EUR');
+//kaina didesne nei nei vidutine
 var bigerWhenAvg = prekes.filter(preke=>preke.price>avgPrice);
 bigerWhenAvg.forEach(preke=>console.log('Brangesne nei vid: ',preke.name, 'kaina',preke.price, 'EUR'));
 //pagal tipa
@@ -217,6 +219,6 @@ riebalai.forEach(preke=>console.log(preke.name));
 console.warn('Bakaleja:');
 var bakaleja = prekes.filter(preke=>preke.type=='bakaleja');
 bakaleja.forEach(preke=>console.log(preke.name));
-//prideti savybe
-endExpire.forEach(preke=>preke.buy='NEPIRKTI!');
+//prideti property
+endExpire.forEach(preke=>preke.pirkti='NEPIRKTI!');
 console.log(endExpire);
